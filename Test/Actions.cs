@@ -16,7 +16,7 @@ namespace Segment.Test
 		{
 			return new Properties () {
 				{ "Success", true },
-				{ "When", DateTime.Now }
+				{ "When", DateTime.UtcNow }
 			};
 		}
 
@@ -25,7 +25,7 @@ namespace Segment.Test
 			return new Traits () {
 				{ "Subscription Plan", "Free" },
 				{ "Friends", 30 },
-				{ "Joined", DateTime.Now },
+				{ "Joined", DateTime.UtcNow },
 				{ "Cool", true },
 				{ "Company", new Dict () { { "name", "Initech, Inc " } } },
 				{ "Revenue", 40.32 },
@@ -36,7 +36,7 @@ namespace Segment.Test
 		public static Options Options ()
 		{
 			return new Options () 
-				.SetTimestamp (DateTime.Now)
+				.SetTimestamp (DateTime.UtcNow)
 				.SetAnonymousId (Guid.NewGuid ().ToString())
 				.SetIntegration ("all", false)
 				.SetIntegration ("Mixpanel", true)
